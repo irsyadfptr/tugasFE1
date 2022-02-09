@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content mt-5">
+            <h3>Mini Calculator</h3>
+            <hr />
+            <form class="row g-3" id="calculator-form">
+                <div class="col-12">
+                    <input type="text" class="form-control mb-2" placeholder="Value 1">
+                </div>
+                <div class="col-12">
+                    <input type="text" class="form-control input" placeholder="Value 2">
+                </div>
+                <div class="col-12 d-flex justify-content-center mb-2">
+                    <button type="button" class="btn btn-primary m-1">+</button>
+                    <button type="button" class="btn btn-primary m-1">-</button>
+                    <button type="button" class="btn btn-primary m-1">*</button>
+                    <button type="button" class="btn btn-primary m-1">/</button>
+                    <button type="button" class="btn btn-secondary m-1">Reset</button>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="form-control" placeholder="Result">
+                </div>
+            </form>
+        </div>
+        <script>
+            document.getElementsByClassName("btn")[0].onclick = function plus() {
+                const input1 = parseInt(document.getElementsByTagName("input")[0].value)
+                const input2 = parseInt(document.getElementsByTagName("input")[1].value)
+                console.log("plus");
+                if(isNaN(input1) && isNaN(input2)){
+                    alert("Value 1 and value 2 must be number")
+                }
+                else if(isNaN(input1) && !isNaN(input2)) {
+                    alert("Value 1 must be number")
+                }
+                else if(!isNaN(input1) && isNaN(input2)) {
+                    alert("Value 2 must be number")
+                }
+                else {
+                    document.getElementsByTagName("input")[2].value = input1 + input2;
+                }
+            }
+
+            document.getElementsByClassName("btn")[1].onclick = function minus() {
+                const input1 = parseInt(document.getElementsByTagName("input")[0].value)
+                const input2 = parseInt(document.getElementsByTagName("input")[1].value)
+                console.log("minus");
+                if(isNaN(input1) && isNaN(input2)){
+                    alert("Value 1 and value 2 must be number")
+                }
+                else if(isNaN(input1) && !isNaN(input2)) {
+                    alert("Value 1 must be number")
+                }
+                else if(!isNaN(input1) && isNaN(input2)) {
+                    alert("Value 2 must be number")
+                }
+                else {
+                    document.getElementsByTagName("input")[2].value = input1 - input2;
+                }
+            }
+
+            document.getElementsByClassName("btn")[2].onclick = function times() {
+                const input1 = parseInt(document.getElementsByTagName("input")[0].value)
+                const input2 = parseInt(document.getElementsByTagName("input")[1].value)
+                console.log("times");
+                if(isNaN(input1) && isNaN(input2)){
+                    alert("Value 1 and value 2 must be number")
+                }
+                else if(isNaN(input1) && !isNaN(input2)) {
+                    alert("Value 1 must be number")
+                }
+                else if(!isNaN(input1) && isNaN(input2)) {
+                    alert("Value 2 must be number")
+                }
+                else {
+                    document.getElementsByTagName("input")[2].value = input1 * input2;
+                }
+            }
+
+            document.getElementsByClassName("btn")[3].onclick = function divides() {
+                const input1 = parseInt(document.getElementsByTagName("input")[0].value)
+                const input2 = parseInt(document.getElementsByTagName("input")[1].value)
+                console.log("divides");
+                if(isNaN(input1) && isNaN(input2)){
+                    alert("Value 1 and value 2 must be number")
+                }
+                else if(isNaN(input1) && !isNaN(input2)) {
+                    alert("Value 1 must be number")
+                }
+                else if(!isNaN(input1) && isNaN(input2)) {
+                    alert("Value 2 must be number")
+                }
+                else {
+                    document.getElementsByTagName("input")[2].value = input1 / input2;
+                }
+            }
+
+            document.getElementsByClassName("btn")[4].onclick = function reset() {
+                console.log("reset")
+                document.getElementsByTagName("input")[0].value = null
+                document.getElementsByTagName("input")[1].value = null
+                document.getElementsByTagName("input")[2].value = null
+            }
+
+        </script>
+</body>
+
+</html>
